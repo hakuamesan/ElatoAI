@@ -7,14 +7,15 @@
 #include "WifiManager.h"
 #include <driver/touch_sensor.h>
 #include "Button.h"
-#include "FactoryReset.h"
+//#include "FactoryReset.h"
 
 // #define WEBSOCKETS_DEBUG_LEVEL WEBSOCKETS_LEVEL_ALL
 
-#define TOUCH_THRESHOLD 28000
-#define LONG_PRESS_MS 1000
-#define REQUIRED_RELEASE_CHECKS 100     // how many consecutive times we need "below threshold" to confirm release
-#define TOUCH_DEBOUNCE_DELAY 1000 // milliseconds
+constexpr int TOUCH_THRESHOLD = 28000;
+constexpr int LONG_PRESS_MS = 1000;
+constexpr short int REQUIRED_RELEASE_CHECKS = 100;      // how many consecutive times we need "below threshold" to confirm release
+constexpr int TOUCH_DEBOUNCE_DELAY = 1000;              // milliseconds
+
 
 AsyncWebServer webServer(80);
 WIFIMANAGER WifiManager;
